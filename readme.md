@@ -18,6 +18,7 @@ Installing:
 
 ```bash
 npm i cordova-plugin-calendar-ios-fix
+npm i @awesome-cordova-plugins/calendar
 ```
 
 On Android add the following permissions to `androidmanifest.xml`:
@@ -25,3 +26,14 @@ On Android add the following permissions to `androidmanifest.xml`:
 <uses-permission android:name="android.permission.READ_CALENDAR"/>
 <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
 ```
+
+On iOS add `Privacy - Calendars Full Access Usage Description` and `Privacy - Calendars Usage Description` to your Info.plist:
+```xml
+<key>NSCalendarsFullAccessUsageDescription</key>
+<string>Add events to the calendar</string>
+<key>NSCalendarsUsageDescription</key>
+<string>To add events to the calendar</string>
+```
+
+## Notes
+When running `cap sync` you will get warnings about requiring `NSContactsUsageDescription` and `CFBundleLocalizations`.
